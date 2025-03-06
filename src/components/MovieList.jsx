@@ -37,7 +37,7 @@ function MovieList({ watchlist, setWatchlist }) {
           <img
             src={`src/assets/img/${movie.img}.jpg`}
             alt={movie.name}
-            className='w-full h-64 object-cover rounded-t-2xl'
+            className='w-full h-100 object-cover rounded-lg mb-3' //altura del imagen respecto card
           />
           <div className='p-4 text-center'>
             <h2 className='text-white text-xl font-semibold mb-3'>{movie.name}</h2>
