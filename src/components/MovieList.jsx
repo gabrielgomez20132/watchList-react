@@ -28,18 +28,24 @@ function MovieList({ watchlist, setWatchlist }) {
   };
 
   return (
-    <div className='p-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4'>
+    <div className='p-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6'>
       {movies.map((movie, index) => (
-        <div key={index} className="bg-dark-secondary rounded-lg shadow-lg overflow-hidden"> {/* Fondo oscuro de la tarjeta */}
-          <img src={`src/assets/img/${movie.img}.jpg`} alt={movie.name} className="w-full h-56 object-cover" /> {/* Imagen de la película */}
-          <div className="p-4">
-            <h2 className="text-text-primary text-lg text-center font-bold mb-2">
-              {movie.name}
-            </h2>
+        <div
+          key={index}
+          className='bg-gray-800 rounded-2xl shadow-lg overflow-hidden transition-transform transform hover:scale-105 hover:shadow-2xl'
+        >
+          <img
+            src={`src/assets/img/${movie.img}.jpg`}
+            alt={movie.name}
+            className='w-full h-64 object-cover rounded-t-2xl'
+          />
+          <div className='p-4 text-center'>
+            <h2 className='text-white text-xl font-semibold mb-3'>{movie.name}</h2>
             <button
-              className="bg-green-500 p-2 mx-auto block active:scale-95 transition-transform duration-100 shadow-lg hover:bg-green-600"
-              onClick={() => addToWatchList(movie)}>
-              Agregar a Watchlist
+              className='bg-green-500 text-white font-medium px-5 py-2 rounded-full shadow-md hover:bg-green-600 hover:shadow-lg active:scale-90 active:opacity-80 transition-all duration-150'
+              onClick={() => addToWatchList(movie)}
+            >
+              + Watchlist
             </button>
           </div>
         </div>
